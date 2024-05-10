@@ -363,9 +363,9 @@ const Navbar = () => {
                   </NavLink>
                   <NavLink
                     className="cursor nested"
-                    to="CRDshow/manual_robotics/trilathon"
+                    to="CRDshow/manual_robotics/triathlon"
                   >
-                    Trilathon
+                    Triathlon
                   </NavLink>
 
 {/*                   <NavLink
