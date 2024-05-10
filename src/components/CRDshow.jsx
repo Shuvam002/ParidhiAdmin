@@ -7,89 +7,89 @@ const CRDshow = () => {
   const navigate = useNavigate();
   const [players, setPlayers] = useState([]);
   const { eventName } = useParams();
-
+  
   const eventInfo = {
     web_minds: {
       name: "Web Minds",
-      apiToGetList: `http://localhost:6001/megatronix/paridhi/admin/crd/coding/web-minds`,
-      apiToSendPlayed: `http://localhost:6001/megatronix/paridhi/admin/crd/coding/web-minds/`,
+      apiToGetList: `${apiUrl}/crd/coding/web-minds`,
+      apiToSendPlayed: `${apiUrl}/crd/coding/web-minds/`,
     },
     code_quest: {
       name: "Code Quest",
-      apiToGetList: `http://localhost:6001/megatronix/paridhi/admin/crd/coding/code-quest`,
-      apiToSendPlayed: `http://localhost:6001/megatronix/paridhi/admin/crd/coding/code-quest/`,
+      apiToGetList: `${apiUrl}/crd/coding/code-quest`,
+      apiToSendPlayed: `${apiUrl}/crd/coding/code-quest/`,
     },
     codezen: {
       name: "CodeZen",
-      apiToGetList: `http://localhost:6001/megatronix/paridhi/admin/crd/coding/codezen`,
-      apiToSendPlayed: `http://localhost:6001/megatronix/paridhi/admin/crd/coding/codezen/`,
+      apiToGetList: `${apiUrl}/crd/coding/codezen`,
+      apiToSendPlayed: `${apiUrl}/crd/coding/codezen/`,
       api: ``,
     },
 
     roboKlassiker: {
       name: "Robo Klassiker",
-      apiToGetList: `http://localhost:6001/megatronix/paridhi/admin/crd/robotics/robo-klassiker`,
-      apiToSendPlayed: `http://localhost:6001/megatronix/paridhi/admin/crd/robotics/robo-klassiker/`,
+      apiToGetList: `${apiUrl}/crd/robotics/robo-klassiker`,
+      apiToSendPlayed: `${apiUrl}/crd/robotics/robo-klassiker/`,
     },
     triathlon: {
       name: "Triathlon",
-      apiToGetList: `http://localhost:6001/megatronix/paridhi/admin/crd/robotics/triathlon`,
-      apiToSendPlayed: `http://localhost:6001/megatronix/paridhi/admin/crd/robotics/triathlon/`,
+      apiToGetList: `${apiUrl}/crd/robotics/triathlon`,
+      apiToSendPlayed: `${apiUrl}/crd/robotics/triathlon/`,
     },
 
     line_trekker: {
       name: "Line Trekker",
-      apiToGetList: `http://localhost:6001/megatronix/paridhi/admin/crd/robotics/line-trekker`,
-      apiToSendPlayed: `http://localhost:6001/megatronix/paridhi/admin/crd/robotics/line-trekker/`,
+      apiToGetList: `${apiUrl}/crd/robotics/line-trekker`,
+      apiToSendPlayed: `${apiUrl}/crd/robotics/line-trekker/`,
     },
 
     setu_bandhan: {
       name: "Setu Bandhan",
-      apiToGetList: `http://localhost:6001/megatronix/paridhi/admin/crd/robotics/setu-bandhan`,
-      apiToSendPlayed: `http://localhost:6001/megatronix/paridhi/admin/crd/civil/setu-bandhan/`,
+      apiToGetList: `${apiUrl}/crd/robotics/setu-bandhan`,
+      apiToSendPlayed: `${apiUrl}/crd/civil/setu-bandhan/`,
     },
     track_o_treasure: {
       name: "Track o Treasure",
-      apiToGetList: `http://localhost:6001/megatronix/paridhi/admin/crd/civil/tot`,
-      apiToSendPlayed: `http://localhost:6001/megatronix/paridhi/admin/crd/civil/tot/`,
+      apiToGetList: `${apiUrl}/crd/civil/tot`,
+      apiToSendPlayed: `${apiUrl}/crd/civil/tot/`,
     },
     mega_arch: {
       name: "Mega Arch",
-      apiToGetList: `http://localhost:6001/megatronix/paridhi/admin/crd/civil/mega-arch`,
-      apiToSendPlayed: `http://localhost:6001/megatronix/paridhi/admin/crd/civil/mega-arch/`,
+      apiToGetList: `${apiUrl}/crd/civil/mega-arch`,
+      apiToSendPlayed: `${apiUrl}/crd/civil/mega-arch/`,
     },
 
     electriquest: {
       name: "Electriquest",
-      apiToGetList: `http://localhost:6001/megatronix/paridhi/admin/crd/civil/electri-quest`,
-      apiToSendPlayed: `http://localhost:6001/megatronix/paridhi/admin/crd/robotics/electri-quest/`,
+      apiToGetList: `${apiUrl}/crd/civil/electri-quest`,
+      apiToSendPlayed: `${apiUrl}/crd/robotics/electri-quest/`,
     },
 
     throne_of_bots_8kg: {
       name: "TOB 8kg",
-      apiToGetList: `http://localhost:6001/megatronix/paridhi/admin/crd/robotics/war-8kg`,
-      apiToSendPlayed: `http://localhost:6001/megatronix/paridhi/admin/crd/robotics/war-8kg/`,
+      apiToGetList: `${apiUrl}/crd/robotics/war-8kg`,
+      apiToSendPlayed: `${apiUrl}/crd/robotics/war-8kg/`,
     },
     throne_of_bots_15kg: {
       name: "TOB 15kg",
-      apiToGetList: `http://localhost:6001/megatronix/paridhi/admin/crd/robotics/war-15kg`,
-      apiToSendPlayed: `http://localhost:6001/megatronix/paridhi/admin/crd/robotics/war-15kg/`,
+      apiToGetList: `${apiUrl}/crd/robotics/war-15kg`,
+      apiToSendPlayed: `${apiUrl}/crd/robotics/war-15kg/`,
     },
 
     table_tennis: {
       name: "Table Tennis",
-      apiToGetList: `http://localhost:6001/megatronix/paridhi/admin/crd/general/table-tennis`,
-      apiToSendPlayed: `http://localhost:6001/megatronix/paridhi/admin/crd/general/table-tennis/`,
+      apiToGetList: `${apiUrl}/crd/general/table-tennis`,
+      apiToSendPlayed: `${apiUrl}/crd/general/table-tennis/`,
     },
     binge_quiz: {
       name: "Binge Quiz",
-      apiToGetList: `http://localhost:6001/megatronix/paridhi/admin/crd/general/binge-quiz`,
-      apiToSendPlayed: `http://localhost:6001/megatronix/paridhi/admin/crd/general/binge-quiz/`,
+      apiToGetList: `${apiUrl}/crd/general/binge-quiz`,
+      apiToSendPlayed: `${apiUrl}/crd/general/binge-quiz/`,
     },
     carrom: {
       name: "Carrom",
-      apiToGetList: `http://localhost:6001/megatronix/paridhi/admin/crd/general/carrom`,
-      apiToSendPlayed: `http://localhost:6001/megatronix/paridhi/admin/crd/general/carrom/`,
+      apiToGetList: `${apiUrl}/crd/general/carrom`,
+      apiToSendPlayed: `${apiUrl}/crd/general/carrom/`,
     },
   };
   const event = eventInfo[eventName];
