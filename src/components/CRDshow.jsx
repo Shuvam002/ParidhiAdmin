@@ -7,7 +7,7 @@ const CRDshow = () => {
   const navigate = useNavigate();
   const [players, setPlayers] = useState([]);
   const { eventName } = useParams();
-  
+  const apiUrl = String(import.meta.env.VITE_API_ADMIN);
   const eventInfo = {
     web_minds: {
       name: "Web Minds",
